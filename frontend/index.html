@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon API Go</title>
+</head>
+<body>
+    <h1>Test de l'API</h1>
+    <div id="result"></div>
+    <script>
+        fetch('http://localhost:8081/api/health')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').textContent = 
+                    `Statut de l'API: ${data.status}`;
+            })
+            .catch(error => console.error('Erreur:', error));
+    </script>
+</body>
+</html> 
